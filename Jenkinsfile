@@ -13,7 +13,7 @@ pipeline {
                 sh 'git config --global user.email "gizmo0320@unleveledgaming.com" \
                 && git config --global user.name "Gizmo0320"'
                 sh "chmod +x ./scripts/jenkinsBuild.sh && ./scripts/jenkinsBuild.sh ${BUILD_ID}"
-                }
+             }
             }
             post {
                 success {
