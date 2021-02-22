@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'git config --global user.email "alex@mizerak.eu" \
-                && git config --global user.name "Alemiz112"'
+                sh 'git config --global user.email "gizmo0320@unleveledgaming.com" \
+                && git config --global user.name "Gizmo0320"'
                 sh "chmod +x ./scripts/jenkinsBuild.sh && ./scripts/jenkinsBuild.sh ${BUILD_ID}"
                 withMaven {
                     sh "mvn -s /root/.m2/settings.xml -version"
