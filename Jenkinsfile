@@ -13,9 +13,6 @@ pipeline {
                 sh 'git config --global user.email "gizmo0320@unleveledgaming.com" \
                 && git config --global user.name "Gizmo0320"'
                 sh "chmod +x ./scripts/jenkinsBuild.sh && ./scripts/jenkinsBuild.sh ${BUILD_ID}"
-                withMaven {
-                    sh "mvn -s /root/.m2/settings.xml -version"
-                    sh 'mvn clean -Pupstream -B -DSNYK_API_ENDPOINT="https://snyk.io/" -Dbuild.number=${BUILD_NUMBER} install'
                 }
             }
             post {
