@@ -16,7 +16,8 @@ pipeline {
                 withMaven {
                     sh "mvn -s /root/.m2/settings.xml -version"
                     sh 'mvn clean -Pupstream -B -DSNYK_API_ENDPOINT="https://snyk.io/" -Dbuild.number=${BUILD_NUMBER} install'
-                }
+                }                
+             }
             }
             post {
                 success {
